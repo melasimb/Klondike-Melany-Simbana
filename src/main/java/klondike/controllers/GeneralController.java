@@ -8,14 +8,12 @@ import klondike.models.Suit;
 import java.util.Stack;
 
 public class GeneralController {
-    //StartController startController;
     private MoveController moveController;
     private ResumeController resumeController;
 
     public GeneralController(Game game) {
         this.moveController = new MoveController(game);
         this.resumeController = new ResumeController(game);
-        //this.startController = new StartController(game);
     }
 
     public Card peekStock() {

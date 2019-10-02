@@ -1,20 +1,14 @@
 package klondike.views.console;
 
-import klondike.controllers.Controller;
 import klondike.controllers.GeneralController;
 import klondike.models.Card;
 import klondike.utils.IO;
 
 public abstract class CardStackView {
 
-//    protected final Controller controller;
     protected final GeneralController generalController;
     private final String title;
 
-//    CardStackView(Controller controller, String title) {
-//        this.controller = controller;
-//        this.title = title;
-//    }
     CardStackView(GeneralController generalController, String title) {
         this.generalController = generalController;
         this.title = title;

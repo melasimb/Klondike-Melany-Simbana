@@ -1,9 +1,6 @@
 package klondike;
 
 import klondike.controllers.GeneralController;
-import klondike.controllers.MoveController;
-import klondike.controllers.ResumeController;
-//import klondike.controllers.StartController;
 import klondike.models.Game;
 import klondike.views.View;
 import klondike.views.console.ConsoleView;
@@ -11,9 +8,6 @@ import klondike.views.console.ConsoleView;
 public class Klondike {
 
     private final GeneralController generalController;
-//    private final StartController startController;
-//    private final MoveController moveController;
-//    private final ResumeController resumeController;
     private View view;
     private Game game;
 
@@ -21,10 +15,6 @@ public class Klondike {
         this.game = new Game();
         this.generalController = new GeneralController(this.game);
         this.view = new ConsoleView(generalController);
-//        this.startController = new StartController(this.game);
-//        this.moveController = new MoveController(this.game);
-//        this.resumeController = new ResumeController(this.game);
-//        this.view = new ConsoleView(startController, moveController, resumeController); //Controlador general?
     }
 
     public static void main(String[] args) {

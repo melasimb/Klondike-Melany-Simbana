@@ -1,12 +1,9 @@
 package klondike.utils;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 public class IO {
 
-    private static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(
-            System.in));
+    private static ReaderGame readerGame = new ReaderGame();
+    private static WriterGame writerGame = new WriterGame();
 
     public static String readString(String title) {
         String input = null;
@@ -14,7 +11,8 @@ public class IO {
         do {
             write(title);
             try {
-                input = bufferedReader.readLine();
+                //input = bufferedReader.readLine();
+                input = readerGame.read();
                 ok = true;
             } catch (Exception ex) {
                 writeFormatError("de cadena de caracteres");
@@ -82,19 +80,19 @@ public class IO {
     }
 
     public static void writeln() {
-        System.out.println();
+        writerGame.writeln("");
     }
 
     public static void writetab() {
-        System.out.print('\t');
+        writerGame.write('\t');
     }
 
     public static void write(String string) {
-        System.out.print(string);
+        writerGame.write(string);
     }
 
     public static void writeln(String string) {
-        System.out.println(string);
+        writerGame.writeln(string);
     }
 
     public static void writeError(String title, String msg) {
@@ -103,12 +101,12 @@ public class IO {
     }
 
     private static void writeFormatError(String formato) {
-        System.out.println("ERROR DE FORMATO! "
+        writerGame.writeln("ERROR DE FORMATO! "
                 + "Introduzca un valor con formato " + formato + ".");
     }
 
     public static void clear() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
+        writerGame.write("\033[H\033[2J");
+        writerGame.flush();
     }
 }
